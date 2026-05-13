@@ -3,27 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>The Digital Systems Architect | Digital Systems Design & Operational Excellence</title>
-  <meta name="description" content="We architect structured digital ecosystems for governance, compliance, and smarter operations in Singapore. Expertise in workflow automation and data reporting.">
-  <meta name="keywords" content="Digital Systems Architect, Operational Excellence, Workflow Automation, Governance and Compliance, Digital Transformation Singapore">
-  <link rel="canonical" href="https://digi-architect-studio.netlify.app/">
+  
+  <!-- SEO PRIMARY -->
+  <title>The Digital Systems Architect | Operational Excellence & Systems Design</title>
+  <meta name="description" content="Architecting structured digital ecosystems for Singapore-based enterprises. Specialized in Digital Systems Design, Workflow Automation, and Governance-ready infrastructure.">
+  <meta name="keywords" content="Digital Systems Architect, Operational Excellence, Workflow Automation Singapore, Governance Systems, Digital Infrastructure Design">
+  
+  <!-- FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  
   <style>
     /* ===== RESET & BASE ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --navy:   #0F1E3C;
-      --deep:   #142550;
+      --deep:   #0A1428;
       --teal:   #00A8A8;
-      --teal2:  #00C8C8;
+      --teal2:  #00E5E5;
       --gold:   #FFB928;
       --white:  #FFFFFF;
-      --light:  #F0F6FF;
       --muted:  #8AA0BF;
-      --card:   #1A2F5A;
-      --radius: 14px;
-      --shadow: 0 8px 40px rgba(0,0,0,0.22);
+      --card-bg: rgba(26, 47, 90, 0.4);
+      --border: rgba(255, 255, 255, 0.1);
     }
     html { scroll-behavior: smooth; }
     body {
@@ -33,59 +35,19 @@
       line-height: 1.65;
       overflow-x: hidden;
     }
-    img { max-width: 100%; display: block; }
+    img { max-width: 100%; display: block; width: 100%; height: auto; }
     a { text-decoration: none; color: inherit; }
 
     /* ===== TYPOGRAPHY ===== */
-    h1,h2,h3,h4 { font-family: 'Space Grotesk', sans-serif; line-height: 1.2; }
-    h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 700; }
-    h2 { font-size: clamp(1.7rem, 3.5vw, 2.8rem); font-weight: 700; }
-    h3 { font-size: 1.25rem; font-weight: 600; }
-    p  { font-size: 1rem; line-height: 1.75; color: #C8D8EE; }
+    h1,h2,h3 { font-family: 'Space Grotesk', sans-serif; line-height: 1.1; text-transform: uppercase; letter-spacing: 0.02em; font-weight: 700; }
+    h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); }
+    h2 { font-size: clamp(1.8rem, 3.5vw, 2.5rem); margin-bottom: 24px; }
+    h3 { font-size: 1.3rem; margin-bottom: 16px; color: var(--white); }
+    p  { font-size: 1rem; line-height: 1.75; color: #B0C8E8; }
 
-    /* ===== LAYOUT UTILITY ===== */
+    /* ===== LAYOUT ===== */
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-    .section-pad { padding: 96px 0; }
-    .section-pad-sm { padding: 72px 0; }
-    .tag {
-      display: inline-block;
-      background: rgba(0,168,168,0.15);
-      color: var(--teal2);
-      border: 1px solid rgba(0,168,168,0.3);
-      border-radius: 100px;
-      padding: 6px 18px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-    .center { text-align: center; }
-
-    /* ===== BUTTONS ===== */
-    .btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 12px 28px; border-radius: 8px;
-      font-weight: 600; font-size: 0.95rem;
-      cursor: pointer; border: none; transition: all 0.22s ease;
-    }
-    .btn-primary {
-      background: var(--teal);
-      color: var(--white);
-    }
-    .btn-primary:hover { background: var(--teal2); transform: translateY(-1px); box-shadow: 0 6px 24px rgba(0,200,200,0.3); }
-    .btn-outline {
-      background: transparent;
-      color: var(--teal2);
-      border: 1.5px solid var(--teal);
-    }
-    .btn-outline:hover { background: rgba(0,168,168,0.12); transform: translateY(-1px); }
-    .btn-gold {
-      background: var(--gold);
-      color: var(--navy);
-    }
-    .btn-gold:hover { background: #ffc940; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(255,185,40,0.35); }
-    .btn-lg { padding: 16px 36px; font-size: 1.05rem; border-radius: 10px; }
+    .section-pad { padding: 120px 0; }
 
     /* ===== HERO ===== */
     .hero {
@@ -99,7 +61,7 @@
       position: absolute; inset: 0;
       background-image: url('https://drive.google.com/thumbnail?id=1gSpX-2d_q2bro4nK6ydfARc8erLOh8PG&sz=w1400');
       background-size: cover; background-position: center;
-      opacity: 0.35;
+      opacity: 0.45;
     }
     .hero-bg::after {
       content: '';
@@ -108,624 +70,146 @@
     }
     .hero-content {
       position: relative; z-index: 2;
-      max-width: 1200px; margin: 0 auto; padding: 0 24px;
-      display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 64px;
+      display: grid; grid-template-columns: 1.2fr 0.8fr; align-items: center; gap: 64px;
     }
-    .hero-left {}
-    .hero-eyebrow {
-      display: flex; align-items: center; gap: 10px;
-      margin-bottom: 22px;
-    }
-    .hero-eyebrow span {
-      font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--gold);
-    }
-    .hero-eyebrow::before {
-      content: ''; display: block;
-      width: 32px; height: 2px; background: var(--gold);
-    }
-    .hero h1 { color: var(--white); margin-bottom: 22px; }
+    .hero-accent { width: 64px; height: 4px; background: var(--gold); margin-bottom: 32px; }
     .hero h1 em { font-style: normal; color: var(--teal2); }
-    .hero p { font-size: 1.1rem; max-width: 520px; margin-bottom: 38px; color: #B0C8E8; }
-    .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
-    .hero-stats {
-      display: flex; gap: 32px; margin-top: 52px;
-      padding-top: 36px;
-      border-top: 1px solid rgba(0,168,168,0.2);
+    .hero p { font-size: 1.2rem; max-width: 600px; margin-bottom: 48px; color: #C8D8EE; }
+    
+    .btn {
+      display: inline-flex; align-items: center; gap: 12px;
+      padding: 18px 42px; border-radius: 4px;
+      font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em;
+      cursor: pointer; border: none; transition: 0.3s ease;
     }
-    .stat-num {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 2rem; font-weight: 700; color: var(--white);
-    }
-    .stat-num span { color: var(--teal2); }
-    .stat-label { font-size: 0.82rem; color: var(--muted); font-weight: 500; margin-top: 2px; }
-    .hero-right {
-      display: flex; align-items: center; justify-content: center;
-    }
-    .hero-visual {
-      position: relative;
-      background: linear-gradient(135deg, rgba(0,168,168,0.1), rgba(0,60,80,0.4));
-      border: 1px solid rgba(0,168,168,0.25);
-      border-radius: var(--radius);
-      padding: 36px;
-      width: 100%; max-width: 440px;
-      backdrop-filter: blur(6px);
-    }
-    .hero-visual-tag {
-      display: flex; align-items: center; gap: 10px;
-      margin-bottom: 24px;
-    }
-    .dot-pulse {
-      width: 10px; height: 10px; border-radius: 50%;
-      background: #2eff80;
-      box-shadow: 0 0 8px #2eff80;
-      animation: pulse 1.6s infinite;
-    }
-    @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.4;} }
-    .hero-visual-tag span { font-size: 0.82rem; color: #2eff80; font-weight: 600; }
-    .metric-row { display: flex; flex-direction: column; gap: 16px; }
-    .metric-item {
-      background: rgba(15,30,60,0.7);
-      border: 1px solid rgba(0,168,168,0.15);
-      border-radius: 10px;
-      padding: 16px 20px;
-    }
-    .metric-label { font-size: 0.78rem; color: var(--muted); font-weight: 500; margin-bottom: 8px; }
-    .metric-bar {
-      height: 6px; background: rgba(255,255,255,0.08);
-      border-radius: 3px; overflow: hidden; margin-bottom: 6px;
-    }
-    .metric-fill {
-      height: 100%; border-radius: 3px;
-      background: linear-gradient(90deg, var(--teal), var(--teal2));
-    }
-    .metric-val { font-size: 0.8rem; color: var(--teal2); font-weight: 600; }
+    .btn-primary { background: var(--teal); color: var(--white); }
+    .btn-primary:hover { background: var(--teal2); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,168,168,0.25); }
+    .btn-outline { background: transparent; color: var(--teal2); border: 2px solid var(--teal); }
+    .btn-outline:hover { background: rgba(0,168,168,0.05); }
 
-    /* ===== TRUSTED BY ===== */
-    .trusted {
-      background: rgba(255,255,255,0.03);
-      border-top: 1px solid rgba(255,255,255,0.06);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      padding: 32px 0;
-    }
-    .trusted-inner {
-      max-width: 1200px; margin: 0 auto; padding: 0 24px;
-      display: flex; align-items: center; gap: 48px; flex-wrap: wrap;
-    }
-    .trusted-label { font-size: 0.8rem; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; white-space: nowrap; }
-    .trusted-logos { display: flex; gap: 40px; align-items: center; flex-wrap: wrap; }
-    .trusted-logo {
-      font-family: 'Space Grotesk', sans-serif; font-weight: 700;
-      font-size: 0.9rem; color: rgba(255,255,255,0.35); letter-spacing: 0.06em;
-      text-transform: uppercase; transition: color 0.2s;
-    }
-    .trusted-logo:hover { color: rgba(255,255,255,0.7); }
+    /* ===== STRIP ===== */
+    .strip { background: var(--deep); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 40px 0; }
+    .strip-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 32px; }
+    .strip-label { color: var(--gold); font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.25em; }
+    .strip-items { display: flex; gap: 40px; color: var(--muted); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em; }
 
-    /* ===== SECTION INTRO ===== */
-    .section-intro { max-width: 640px; margin: 0 auto; text-align: center; margin-bottom: 64px; }
-    .section-intro h2 { margin-bottom: 16px; }
-    .section-intro p { font-size: 1.05rem; }
-
-    /* ===== SERVICES ===== */
-    .services { background: var(--navy); }
-    .services-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px;
-    }
-    .svc-card {
-      background: var(--card);
-      border: 1px solid rgba(0,168,168,0.15);
-      border-radius: var(--radius);
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
-    }
-    .svc-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
-      border-color: rgba(0,168,168,0.5);
-    }
-    .svc-img {
-      width: 100%; height: 220px; object-fit: cover;
-      flex-shrink: 0;
-    }
-    .svc-body { padding: 32px; flex-grow: 1; }
-    .svc-icon {
-      width: 48px; height: 48px; border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.4rem; margin-bottom: 16px;
-    }
-    .svc-icon.teal  { background: rgba(0,168,168,0.15); }
-    .svc-icon.green { background: rgba(70,180,110,0.15); }
-    .svc-icon.purple{ background: rgba(160,100,200,0.15); }
-    .svc-icon.gold  { background: rgba(255,185,40,0.15); }
-    .svc-body h3 { color: var(--white); margin-bottom: 12px; }
-    .svc-body p { font-size: 0.92rem; color: var(--muted); line-height: 1.7; }
-    .svc-link {
-      display: inline-flex; align-items: center; gap: 6px;
-      margin-top: 18px; font-size: 0.88rem; font-weight: 600; color: var(--teal2);
-      transition: gap 0.2s;
-    }
-    .svc-card:hover .svc-link { gap: 10px; }
-
-    /* ===== HOW WE WORK ===== */
-    .how { background: linear-gradient(180deg, #0a1528 0%, var(--navy) 100%); }
-    .steps-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 32px; position: relative;
-    }
-    .step-card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: var(--radius);
-      padding: 32px 28px;
-      position: relative;
-      transition: border-color 0.25s;
-    }
-    .step-card:hover { border-color: rgba(0,168,168,0.4); }
-    .step-num {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 3rem; font-weight: 800;
-      color: rgba(0,168,168,0.12);
-      position: absolute; top: 12px; right: 20px;
-      line-height: 1;
-    }
-    .step-icon {
-      width: 52px; height: 52px;
-      background: linear-gradient(135deg, rgba(0,168,168,0.2), rgba(0,80,100,0.3));
-      border-radius: 12px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.5rem; margin-bottom: 20px;
-      border: 1px solid rgba(0,168,168,0.2);
-    }
-    .step-card h3 { color: var(--white); margin-bottom: 10px; font-size: 1.1rem; }
-    .step-card p { font-size: 0.9rem; color: var(--muted); }
-
-    /* ===== SEGMENTS ===== */
-    .segments-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 30px;
-      margin-top: 50px;
-    }
-    .segment-card {
-      background: var(--deep);
-      padding: 35px;
-      border-radius: var(--radius);
-      border: 1px solid rgba(255,255,255,0.05);
-      transition: all 0.3s ease;
-      text-align: center;
-    }
-    .segment-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--teal);
-    }
-    .segment-icon {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      display: block;
-    }
-    .segment-card h4 {
-      color: var(--gold);
-      margin-bottom: 12px;
-    }
-    .segment-card p {
-      font-size: 0.95rem;
-      color: var(--light);
-      opacity: 0.8;
-    }
-
-    /* ===== FOUNDER ===== */
-    .founder-section {
-      background: var(--navy);
-      border-top: 1px solid rgba(255,255,255,0.05);
-    }
-    .founder-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.5fr;
-      gap: 60px;
-      align-items: center;
-    }
-    .founder-img {
-      border-radius: var(--radius);
+    /* ===== SERVICE CARDS ===== */
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
       overflow: hidden;
-      border: 4px solid var(--deep);
-      box-shadow: var(--shadow);
+      transition: 0.3s ease;
     }
-    .founder-text blockquote {
-      font-size: 1.4rem;
-      font-family: 'Space Grotesk', sans-serif;
-      font-style: italic;
-      color: var(--teal);
-      margin-bottom: 30px;
-      line-height: 1.4;
-      border-left: 4px solid var(--gold);
-      padding-left: 20px;
-    }
-    @media (max-width: 992px) {
-      .founder-grid { grid-template-columns: 1fr; gap: 40px; }
-    }
-
-    /* ===== ENGAGEMENTS ===== */
-    .testimonials { background: var(--navy); }
-    .t-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
-    .t-card {
-      background: var(--card);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: var(--radius); padding: 32px;
-      transition: border-color 0.25s;
-    }
-    .t-card:hover { border-color: rgba(0,168,168,0.35); }
-    .t-stars { color: var(--gold); font-size: 1rem; margin-bottom: 18px; letter-spacing: 2px; }
-    .t-quote { font-size: 0.97rem; color: #C0D4EE; line-height: 1.75; margin-bottom: 24px; font-style: italic; }
-    .t-author { display: flex; align-items: center; gap: 14px; }
-    .t-avatar {
-      width: 44px; height: 44px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--teal), var(--deep));
-      display: flex; align-items: center; justify-content: center;
-      font-weight: 700; font-size: 1rem; color: var(--white);
-      border: 2px solid rgba(0,168,168,0.3);
-    }
-    .t-name { font-weight: 600; color: var(--white); font-size: 0.9rem; }
-    .t-role { font-size: 0.8rem; color: var(--muted); }
-
-    /* ===== CTA ===== */
-    .cta-section {
-      position: relative; overflow: hidden;
-      background: linear-gradient(135deg, #004d4d 0%, #003333 100%);
-      text-align: center;
-    }
-    .cta-bg-img {
-      position: absolute; inset: 0;
-      background-image: url('https://drive.google.com/thumbnail?id=12RngCgill4sT4DxbibdWFjOanZrMiMdn&sz=w1400');
-      background-size: cover; background-position: center;
-      opacity: 0.25;
-    }
-    .cta-content { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; padding: 0 24px; }
-    .cta-section h2 { font-size: clamp(1.9rem, 4vw, 3rem); margin-bottom: 18px; color: var(--white); }
-    .cta-section p { font-size: 1.1rem; color: rgba(255,255,255,0.75); margin-bottom: 40px; }
-    .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-    .cta-section .btn-outline { border-color: rgba(255,255,255,0.5); color: rgba(255,255,255,0.85); }
+    .card:hover { transform: translateY(-8px); border-color: rgba(0,168,168,0.4); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+    .card-img-wrap { height: 220px; overflow: hidden; position: relative; }
+    .card-img-wrap::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, transparent, var(--navy)); opacity: 0.6; }
+    .card-img { height: 100%; object-fit: cover; transition: 0.5s ease; }
+    .card:hover .card-img { transform: scale(1.05); }
+    .card-body { padding: 40px; border-top: 4px solid var(--teal); }
+    .card:hover .card-body { border-top-color: var(--teal2); }
 
     /* ===== FOOTER ===== */
-    footer {
-      background: #080f1e;
-      border-top: 1px solid rgba(255,255,255,0.07);
-      padding: 64px 0 32px;
-    }
-    .footer-brand { 
-      display: flex; flex-direction: column; align-items: center; text-align: center; 
-    }
-    .footer-logo { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.05rem; color: var(--white); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
-    .nav-logo-icon {
-      width: 38px; height: 38px;
-      background: linear-gradient(135deg, var(--teal), var(--deep));
-      border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.1rem; font-weight: 800; color: var(--white);
-      border: 1px solid rgba(0,200,200,0.4);
-    }
-    .footer-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin-bottom: 24px; max-width: 600px; }
-    .footer-contact { display: flex; align-items: center; gap: 30px; }
-    .footer-contact a { display: flex; align-items: center; gap: 8px; font-size: 0.88rem; color: var(--muted); transition: color 0.2s; }
-    .footer-contact a:hover { color: var(--teal2); }
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.07);
-      padding-top: 28px; margin-top: 56px;
-      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
-    }
-    .footer-bottom p { font-size: 0.82rem; color: var(--muted); }
-    .footer-teal { color: var(--teal2); }
+    footer { padding: 100px 0 60px; border-top: 1px solid var(--border); background: var(--deep); }
+    .footer-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 60px; }
+    .footer-logo { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.25rem; color: var(--white); text-transform: uppercase; }
+    .footer-bottom { border-top: 1px solid var(--border); padding-top: 40px; color: var(--muted); font-size: 0.85rem; display: flex; justify-content: space-between; text-transform: uppercase; letter-spacing: 0.1em; }
 
-    /* ===== DIVIDER ===== */
-    .teal-divider { height: 3px; background: linear-gradient(90deg, var(--teal), transparent); }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 900px) {
-      .hero-content { grid-template-columns: 1fr; }
-      .hero-right { display: none; }
-    }
-    @media (max-width: 640px) {
-      .hero-stats { flex-direction: column; gap: 16px; }
-      .footer-contact { flex-direction: column; gap: 15px; }
+    @media (max-width: 992px) {
+      .hero-content { grid-template-columns: 1fr; text-align: center; }
+      .hero-accent { margin: 0 auto 32px; }
+      .hero p { margin-left: auto; margin-right: auto; }
+      .btn { width: 100%; justify-content: center; margin-bottom: 12px; }
+      .strip-items { gap: 20px; font-size: 0.7rem; }
     }
   </style>
 </head>
 <body>
 
-<!-- ===== HERO ===== -->
-<section class="hero" id="home">
-  <div class="hero-bg"></div>
-  <div class="hero-content">
-    <div class="hero-left">
-      <div class="hero-eyebrow"><span>The Digital Systems Architect</span></div>
-      <h1>Architecting <em>Operational Excellence</em></h1>
-      <p>We design structured digital ecosystems—Syariah & Community Law, Digital Systems Design, and Workflow Automation—transforming fragmented data into scalable systems for governance and clarity.</p>
-      <div class="hero-btns">
-        <a href="#services" class="btn btn-primary btn-lg">Explore Solutions</a>
-        <a href="#contact" class="btn btn-outline btn-lg">Let's Talk</a>
-      </div>
-      <div class="hero-stats">
-        <div class="stat-item">
-          <div class="stat-num">17<span>+</span></div>
-          <div class="stat-label">Years of Experience</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">4</div>
-          <div class="stat-label">Core Competencies</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">100<span>%</span></div>
-          <div class="stat-label">Tailored to Your Operations</div>
-        </div>
-      </div>
-    </div>
-    <div class="hero-right">
-      <div class="hero-visual">
-        <div class="hero-visual-tag">
-          <div class="dot-pulse"></div>
-          <span>Systems Live &amp; Optimised</span>
-        </div>
-        <div class="metric-row">
-          <div class="metric-item">
-            <div class="metric-label">Workflow Automation Coverage</div>
-            <div class="metric-bar"><div class="metric-fill" style="width:88%"></div></div>
-            <div class="metric-val">88% manual tasks eliminated</div>
-          </div>
-          <div class="metric-item">
-            <div class="metric-label">Governance Readiness</div>
-            <div class="metric-bar"><div class="metric-fill" style="width:95%;background:linear-gradient(90deg,#60b080,#80d0a0);"></div></div>
-            <div class="metric-val">Audit-ready infrastructure</div>
-          </div>
-          <div class="metric-item">
-            <div class="metric-label">Data Visibility Score</div>
-            <div class="metric-bar"><div class="metric-fill" style="width:92%;background:linear-gradient(90deg,#FFB928,#FFD870);"></div></div>
-            <div class="metric-val">Real-time operational dashboards</div>
+  <header class="hero">
+    <div class="hero-bg"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-left">
+          <div class="hero-accent"></div>
+          <h1>ARCHITECTING <br><em>OPERATIONAL EXCELLENCE</em></h1>
+          <p>Designing structured digital ecosystems—Digital Systems Design, Workflow Automation, and Strategic Governance—transforming fragmented data into scalable systems for clarity and growth.</p>
+          <div class="hero-actions">
+            <a href="#expertise" class="btn btn-primary">Our Expertise</a>
+            <a href="mailto:hello@digi-architect.studio" class="btn btn-outline">Direct Contact</a>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </header>
 
-<!-- ===== TRUSTED BY ===== -->
-<div class="trusted">
-  <div class="trusted-inner">
-    <span class="trusted-label">Experience across</span>
-    <div class="trusted-logos">
-      <span class="trusted-logo">Public Service</span>
-      <span class="trusted-logo">Regulatory Bodies</span>
-      <span class="trusted-logo">Digital Transformation</span>
-      <span class="trusted-logo">Governance &amp; Compliance</span>
-      <span class="trusted-logo">Operations Management</span>
-    </div>
-  </div>
-</div>
-
-<!-- ===== SERVICES ===== -->
-<section class="services section-pad" id="services">
-  <div class="container">
-    <div class="section-intro">
-      <div class="tag">Our Capabilities</div>
-      <h2>End-to-End Digital Systems Architecture</h2>
-      <p>From designing foundational databases to building governance frameworks — we bring structure and intelligence to how your organisation operates.</p>
-    </div>
-    <div class="services-grid">
-      <div class="svc-card">
-        <img class="svc-img" src="https://drive.google.com/thumbnail?id=1ASgpjT5RSz8B5nDYvMVcouJNB2kYx_mT&sz=w600" alt="Digital Systems Design"/>
-        <div class="svc-body">
-          <div class="svc-icon teal">🗄️</div>
-          <h3>Digital Systems Design</h3>
-          <p>Designing structured systems — databases, dashboards, registers and operational tools — that are scalable, efficient and built around how your organisation actually works.</p>
-        </div>
-      </div>
-      <div class="svc-card">
-        <img class="svc-img" src="https://drive.google.com/thumbnail?id=1XnOhNqs_2gHiGKe5YTipdSyhEpnJs3se&sz=w600" alt="Workflow Automation"/>
-        <div class="svc-body">
-          <div class="svc-icon green">⚡</div>
-          <h3>Workflow Automation</h3>
-          <p>Reducing manual work through smarter forms, approvals, document flows and reporting structures — freeing your team to focus on what matters.</p>
-        </div>
-      </div>
-      <div class="svc-card">
-        <img class="svc-img" src="https://drive.google.com/thumbnail?id=1-vh6AX05-uotBt1BaZ2TukhGO0h3lsYI&sz=w600" alt="Governance and Compliance"/>
-        <div class="svc-body">
-          <div class="svc-icon purple">🛡️</div>
-          <h3>Governance &amp; Compliance</h3>
-          <p>Building systems that support traceability, accountability, audit readiness and management oversight — so compliance is built in, not bolted on.</p>
-        </div>
-      </div>
-      <div class="svc-card">
-        <img class="svc-img" src="https://drive.google.com/thumbnail?id=15q9y8Jnn7Tl42qLlgH_T85-u630YvBuw&sz=w600" alt="Data and Reporting"/>
-        <div class="svc-body">
-          <div class="svc-icon gold">📊</div>
-          <h3>Data &amp; Reporting</h3>
-          <p>Creating dashboards and reporting tools that make operational performance easier to monitor and act on — turning data into decisions.</p>
-        </div>
+  <div class="strip">
+    <div class="container strip-inner">
+      <span class="strip-label">Expertise Across</span>
+      <div class="strip-items">
+        <span>Strategic Operations</span>
+        <span>Regulatory Systems</span>
+        <span>Governance & Compliance</span>
       </div>
     </div>
   </div>
-</section>
 
-<div class="teal-divider"></div>
-
-<!-- ===== HOW WE WORK ===== -->
-<section class="how section-pad" id="how">
-  <div class="container">
-    <div class="section-intro">
-      <div class="tag">Our Process</div>
-      <h2>A Clear Path From Problem to Solution</h2>
-      <p>We don't deliver off-the-shelf products — every engagement starts with understanding your organisation deeply before any design begins.</p>
-    </div>
-    <div class="steps-grid">
-      <div class="step-card">
-        <div class="step-num">01</div>
-        <div class="step-icon">🔍</div>
-        <h3>Discover</h3>
-        <p>We map your current operations, pain points and data flows to understand what's really happening on the ground.</p>
+  <main class="section-pad" id="expertise">
+    <div class="container">
+      <div style="margin-bottom: 80px; border-left: 4px solid var(--gold); padding-left: 32px;">
+        <h2>Digital Systems Architecture</h2>
+        <p>Turning organizational complexity into technical precision.</p>
       </div>
-      <div class="step-card">
-        <div class="step-num">02</div>
-        <div class="step-icon">🗺️</div>
-        <h3>Architect</h3>
-        <p>We design a structured system blueprint — clear, documented, and aligned with governance and operational requirements.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">03</div>
-        <div class="step-icon">⚙️</div>
-        <h3>Build</h3>
-        <p>We implement the solution using the right tools for your context — no vendor lock-in, no overengineering.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">04</div>
-        <div class="step-icon">🚀</div>
-        <h3>Embed &amp; Sustain</h3>
-        <p>We work alongside your team to embed the system, train users, and ensure the solution continues to deliver value.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== WHO WE SUPPORT ===== -->
-<section class="segments section-pad-sm" style="background:var(--navy);" id="segments">
-  <div class="container">
-    <div class="section-intro">
-      <div class="tag">Who We Serve</div>
-      <h2>Tailored for Every Stage of Growth</h2>
-      <p>Whether you're a startup building your first database or a public sector body strengthening your governance.</p>
-    </div>
-    <div class="segments-grid">
-      <div class="segment-card">
-        <span class="segment-icon">🚀</span>
-        <h4>Startups & SMEs</h4>
-        <p>Moving beyond spreadsheets into scalable, structured digital infrastructure.</p>
-      </div>
-      <div class="segment-card">
-        <span class="segment-icon">🤝</span>
-        <h4>Social Enterprises</h4>
-        <p>Streamlining stakeholder management and reporting to focus on impact.</p>
-      </div>
-      <div class="segment-card">
-        <span class="segment-icon">🏛️</span>
-        <h4>Regulatory Bodies</h4>
-        <p>Strengthening audit readiness, case management, and operational governance.</p>
-      </div>
-      <div class="segment-card">
-        <span class="segment-icon">🎓</span>
-        <h4>Certification Bodies</h4>
-        <p>Managing complex accreditation workflows and registry systems with ease.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== ABOUT THE FOUNDER ===== -->
-<section class="founder-section section-pad" id="about">
-  <div class="container">
-    <div class="founder-grid">
-      <div class="founder-img">
-        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800" alt="Founder - The Digital Systems Architect">
-      </div>
-      <div class="founder-text">
-        <div class="tag">Our Philosophy</div>
-        <h2>Meet the Architect</h2>
-        <blockquote>
-          "We believe technology should make organisations clearer, not more complicated. Our role is to bring structure to complexity."
-        </blockquote>
-        <p>Led by an <strong>experienced Founder</strong> with over 17 years of leadership in public service and regulatory operations. We translate complex operational and compliance requirements into practical digital infrastructure.</p>
-        <p style="margin-top:20px;">We don't just build tools; we build systems that support growth, governance, and long-term sustainability.</p>
-        <div class="cta-btns" style="margin-top:30px; justify-content: flex-start;">
-          <a href="#contact" class="btn btn-gold">Discuss Your System →</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== SELECTED ENGAGEMENTS ===== -->
-<section class="testimonials section-pad-sm" id="engagements">
-  <div class="container">
-    <div class="section-intro">
-      <div class="tag">Track Record</div>
-      <h2>Selected Engagements</h2>
-      <p>Our work is grounded in 17+ years of building structured digital ecosystems for complex operational environments.</p>
-    </div>
-    <div class="t-grid">
-      <div class="t-card">
-        <div class="t-stars">Case Study</div>
-        <p class="t-quote">"Regulatory Case Management & Certification: Designed a unified tracking system for certification workflows and case management, improving audit traceability and management oversight."</p>
-        <div class="t-author">
-          <div class="t-avatar">R</div>
-          <div>
-            <div class="t-name">Regulatory Operations</div>
-            <div class="t-role">Public Sector, Singapore</div>
+      
+      <div class="grid-3">
+        <!-- Systems Design -->
+        <article class="card">
+          <div class="card-img-wrap">
+            <img class="card-img" src="https://drive.google.com/thumbnail?id=1ASgpjT5RSz8B5nDYvMVcouJNB2kYx_mT&sz=w800" alt="Corporate Data Systems Design">
           </div>
-        </div>
-      </div>
-      <div class="t-card">
-        <div class="t-stars">Case Study</div>
-        <p class="t-quote">"Grant Governance & Automation: Developed a digital system for grant application, assessment and reporting, reducing manual data entry and strengthening compliance checks."</p>
-        <div class="t-author">
-          <div class="t-avatar">G</div>
-          <div>
-            <div class="t-name">Grant Management</div>
-            <div class="t-role">Social Sector, Singapore</div>
+          <div class="card-body">
+            <h3>Systems Design</h3>
+            <p>Building foundational organizational structures that turn raw data into actionable intelligence and long-term scalability.</p>
           </div>
-        </div>
-      </div>
-      <div class="t-card">
-        <div class="t-stars">Case Study</div>
-        <p class="t-quote">"Workflow Architecture & Systems Mapping: Mapped and digitised fragmented document workflows for an SME, reducing processing time and enabling real-time performance tracking."</p>
-        <div class="t-author">
-          <div class="t-avatar">S</div>
-          <div>
-            <div class="t-name">Operations Design</div>
-            <div class="t-role">SME Sector</div>
+        </article>
+
+        <!-- Workflow Automation -->
+        <article class="card">
+          <div class="card-img-wrap">
+            <img class="card-img" src="https://drive.google.com/thumbnail?id=1XnOhNqs_2gHiGKe5YTipdSyhEpnJs3se&sz=w800" alt="Workflow Automation Technology">
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+          <div class="card-body">
+            <h3>Automation</h3>
+            <p>Designing intelligent system logic to eliminate operational bottlenecks and optimize high-level decision making.</p>
+          </div>
+        </article>
 
-<!-- ===== CTA ===== -->
-<section class="cta-section section-pad" id="contact">
-  <div class="cta-bg-img"></div>
-  <div class="cta-content">
-    <h2>Ready to Architect Your <em>Digital Future?</em></h2>
-    <p>Let's discuss how we can build a structured, scalable system that brings clarity and efficiency to your operations.</p>
-    <div class="cta-btns">
-      <a href="mailto:hello@digi-architect.studio" class="btn btn-gold btn-lg">hello@digi-architect.studio</a>
-      <a href="#services" class="btn btn-outline btn-lg">View Solutions</a>
+        <!-- Governance & Operations -->
+        <article class="card">
+          <div class="card-img-wrap">
+            <img class="card-img" src="https://drive.google.com/thumbnail?id=1-vh6AX05-uotBt1BaZ2TukhGO0h3lsYI&sz=w800" alt="Strategic Governance Systems">
+          </div>
+          <div class="card-body">
+            <h3>Governance</h3>
+            <p>Architecting systems that ensure transparency, accountability, and operational excellence across all departments.</p>
+          </div>
+        </article>
+      </div>
     </div>
-  </div>
-</section>
+  </main>
 
-<!-- ===== FOOTER ===== -->
-<footer>
-  <div class="container">
-    <div class="footer-brand">
-      <div class="footer-logo">
-        <div class="nav-logo-icon">D</div>
-        The Digital Systems Architect
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-logo">The Digital Systems Architect</div>
       </div>
-      <p class="footer-desc">We design structured digital ecosystems that transform fragmented workflows, documents and data into scalable, governance-ready systems.</p>
-      <div class="footer-contact">
-        <a href="mailto:hello@digi-architect.studio">✉ hello@digi-architect.studio</a>
-        <a href="#">📍 Singapore</a>
-        <a href="#">LinkedIn</a>
+      <div class="footer-bottom">
+        <span>© 2026 The Digital Systems Architect</span>
+        <span>Singapore</span>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2026 The Digital Systems Architect. All rights reserved.</p>
-      <p>
-        <a href="privacy.html?v=1.0.1" style="text-decoration: underline; margin-right: 10px; opacity: 0.8;">Privacy Policy</a>
-        <a href="terms.html?v=1.0.1" style="text-decoration: underline; opacity: 0.8;">Terms of Service</a>
-      </p>
-      <p>Built with ❤️ in <span class="footer-teal">Singapore</span></p>
-    </div>
-  </div>
-</footer>
+  </footer>
 
 </body>
 </html>
